@@ -1,0 +1,66 @@
+/* ==UserStyle==
+@name           APORIE Theme - Variablen
+@version        1.0.0
+@author         jonnilius
+@namespace      github.com/jonnilius
+@description    CSS-Variablen vom APORIE-Theme
+*/
+:root {
+  /* Farben */
+  --color-primary: #c0393b;
+  --color-text: #efefef;
+  --color-surface: #2d3436;
+  --color-background: #1f2425;
+  
+  /* Farben RGB */
+  --color-primary-rgb: 192,57,59;
+  --color-surface-rgb: 45,52,54;
+  --color-background-rgb: 31,36,37;
+    
+  /* Rahmen */
+  --border-thin: thin solid var(--color-primary);
+  --border-medium: 2px solid var(--color-primary);
+  --border-dashed: 2px dashed var(--color-primary);
+  --border-thin-transparent: thin solid transparent;
+  
+  /* Umrandungen */
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 12px;
+  
+  /* Schatten */
+  --shadow-panel: 0 5px 20px rgba(var(--color-primary-rgb), 0.3);
+  --shadow-hover: 0 4px 15px rgba(var(--color-primary-rgb), 0.35);
+  --shadow-focus: 0 0 10px var(--color-primary);
+  
+  /* Filter */
+  --filter-brightness: brightness(1.1);
+  --filter-primary: brightness(0) saturate(100%) invert(27%) sepia(100%) saturate(1778%) hue-rotate(338deg) brightness(80%) contrast(84%);
+  --filter-surface: brightness(0) saturate(100%) invert(15%) sepia(9%) saturate(801%) hue-rotate(147deg) brightness(97%) contrast(85%);
+  --filter-white: brightness(0) saturate(100%) invert(100%) sepia(25%) saturate(33%) hue-rotate(203deg) brightness(111%) contrast(87%);;
+  
+  /* Transform */
+  --transform-more-small: scale(1.02);
+  --transform-small: scale(1.05);
+  --transform-medium: scale(1.15);
+  --transform-hover: scale(1.05);
+  
+  /* Übergang (Transition) */
+  --transition-all: all .15s ease;
+  --transition-shadow: box-shadow .3s ease;
+  --transition-transform: transform .05s ease;
+  --transition-width: max-width .3s ease, width .3s ease;
+  /* Übergang - Verhalten */
+  --transition-open: var(--transition-width);
+  /* Übergang - Elemente */
+  --transition-panel: box-shadow .8s ease-in-out;
+  
+  /* Scrollbar */
+  --scrollbar-color: var(--color-primary) transparent;
+}
+
+/* Auswählen/Markieren */
+::selection {
+  color: var(--color-text);
+  background: var(--color-primary);
+}
