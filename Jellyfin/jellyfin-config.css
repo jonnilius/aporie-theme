@@ -46,8 +46,10 @@ body:not(.dashboardDocument) header .MuiToolbar-root .MuiButton-textPrimary.MuiB
 }
 
 
-/* Endcard ======================
-   Countdown, Layout und Aktionen */
+
+/* ENDCARD ==================================
+  Countdown, Layout und Aktionen
+  =========================================== */
 .upNextContainer {
   position: fixed;
   right: 0;
@@ -67,7 +69,6 @@ body:not(.dashboardDocument) header .MuiToolbar-root .MuiButton-textPrimary.MuiB
 [dir="ltr"] .upNextContainer {
   margin: 0 2em 2em 0;
 }
-
 [dir="rtl"] .upNextContainer {
   margin: 0 0 2em 2em;
 }
@@ -89,15 +90,16 @@ body:not(.dashboardDocument) header .MuiToolbar-root .MuiButton-textPrimary.MuiB
   text-overflow: ellipsis;
 }
 
+/* Buttons */
 .upNextDialog-buttons {
   width: 29.75em;
   justify-content: end;
   align-content: flex-end;
+  gap: 2px;
 }
-
 .upNextDialog-button {
-  background: var(--color-surface);
   color: var(--color-text);
+  background: var(--color-surface);
 }
 
 @media all and (orientation: landscape) {
