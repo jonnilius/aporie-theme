@@ -1,9 +1,3 @@
-@import url("https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/theme.css");
-@import url("https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/indicators.css");
-@import url("https://cdn.jsdelivr.net/gh/n00bcodr/jellyfish@main/progress_bar.css");
-@import url("https://github.com/jonnilius/aporie-theme/raw/refs/heads/main/aporie-theme.css");
-
-
 /* Jellyblue Konfiguration */
 :root {
   --logo: url("https://raw.githubusercontent.com/jonnilius/aporie-theme/main/Jellyfin/logo.png");
