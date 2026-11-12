@@ -1,9 +1,9 @@
 /* ==UserStyle==
-@name           APORIE Theme - Variablen
+@name           APORIE Theme
 @version        1.0.0
 @author         jonnilius
 @namespace      github.com/jonnilius
-@description    CSS-Variablen vom APORIE-Theme
+@description    Standardwerte und CSS-Variablen vom APORIE-Theme
 */
 :root {
   /* Farben */
@@ -52,6 +52,7 @@
   --transition-width: max-width .3s ease, width .3s ease;
   /* Übergang - Verhalten */
   --transition-open: var(--transition-width);
+  --transition-hover: var(--transition-transform), var(--transition-shadow);
   /* Übergang - Elemente */
   --transition-panel: box-shadow .8s ease-in-out;
   
