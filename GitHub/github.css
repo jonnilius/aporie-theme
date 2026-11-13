@@ -64,17 +64,27 @@ a[data-component=Button]{
   color: var(--color-text);
 }
 
-[type=submit], .btn-block{
+/* Primary Button */
+[type=submit], .btn-block, .Button--primary{
   color: var(--color-text);
   background: var(--color-primary);
   border: unset;
   transition: var(--transition-all);
   
-  &:hover {
+  &:hover:not(:disabled, .Button--inactive) {
+    background: var(--color-primary);
     transform: var(--transform-hover);
     box-shadow: var(--shadow-hover);
   }
 }
+
+/* Secondary Button */
+.btn {
+  background: var(--color-surface);
+  border: var(--border-thin);
+  box-shadow: unset;
+}
+
 
 /* Tags */
 .prc-TopicTag-TopicTag-LS-jX{
