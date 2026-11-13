@@ -1,5 +1,41 @@
 @import url("https://theme.aporie.me/aporie-theme.css");
 
+/* Hintergrund */
+body {
+  background: var(--color-background);
+}
+
+
+/* =============== HEADER =============== */
+.GlobalNav {
+  background: var(--color-surface);
+  border-bottom: var(--border-medium);
+  box-shadow: var(--shadow-panel);
+}
+
+/* Tab-Reiter */
+a[data-discover],
+a[data-tab-item]{
+  color: var(--color-text);
+  
+  /* Aktueller Tab */
+  &[aria-current] {
+    background-color: var(--color-primary);
+    &::after {
+      background-color: unset;
+    }
+    
+    [data-component=icon] {
+      color: var(--color-text);
+    }
+    [data-component=CounterLabel] {
+      color: var(--color-primary);
+      background: var(--color-text);
+    }
+  }
+}
+
+
 /* Repository - Directory */
 [containertiming="hpc"]{
   background: var(--color-background);
@@ -15,27 +51,7 @@
 }
 
 
-/* Tab-Reiter */
-a[data-discover],
-a[data-tab-item]{
-  color: var(--color-text);
-  
-  /* Aktueller Tab */
-  &[aria-current] {
-    background-color: var(--color-primary);
-    &::after {
-      background-color: var(--color-primary);
-    }
-    
-    [data-component=icon] {
-      color: var(--color-text);
-    }
-    [data-component=CounterLabel] {
-      color: var(--color-primary);
-      background: var(--color-text);
-    }
-  }
-}
+
 
 /* Link */
 a[data-component=Link] {
