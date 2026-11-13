@@ -1,0 +1,77 @@
+
+/* Repository - Directory */
+[containertiming="hpc"]{
+  background: var(--color-background);
+  border: var(--border-medium);
+  border-radius: var(--radius-medium);
+  
+  
+  /* Header */
+  .bgColor-muted {
+    background: var(--color-surface) !important; /* Important gesetzt */
+    border: unset !important; /* Important gesetzt */
+  }
+}
+
+
+/* Tab-Reiter */
+a[data-discover],
+a[data-tab-item]{
+  color: var(--color-text);
+  
+  /* Aktueller Tab */
+  &[aria-current] {
+    background-color: var(--color-primary);
+    &::after {
+      background-color: var(--color-primary);
+    }
+    
+    [data-component=icon] {
+      color: var(--color-text);
+    }
+    [data-component=CounterLabel] {
+      color: var(--color-primary);
+      background: var(--color-text);
+    }
+  }
+}
+
+/* Link */
+a[data-component=Link] {
+	color: var(--color-primary);
+}
+
+/* Button */
+a[data-component=IconButton],
+a[data-component=Button]{
+  color: var(--color-text);
+}
+
+[type=submit], .btn-block{
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: unset;
+  transition: var(--transition-all);
+  
+  &:hover {
+    transform: var(--transform-hover);
+    box-shadow: var(--shadow-hover);
+  }
+}
+
+/* Tags */
+.prc-TopicTag-TopicTag-LS-jX{
+  color: var(--color-text);
+  background: var(--color-primary);
+}
+
+/* Eingabefeld - Text */
+[data-component=TextInput]{
+  background: var(--color-background);
+  border: var(--border-thin);
+  
+  &:focus-within {
+    outline: var(--border-thin);
+    box-shadow: var(--shadow-focus);
+  }
+}
