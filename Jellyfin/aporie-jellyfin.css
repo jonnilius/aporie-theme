@@ -1,0 +1,19 @@
+/* Konfiguration */
+:root {  
+  /* Trennlinie */
+  --jf-palette-divider: var(--color-primary);
+}
+
+/* Dropdown Einstellungen */
+.MuiMenu-root .MuiPaper-root.MuiPaper-root {
+    background: var(--color-surface) !important;
+    border: var(--border-medium);
+    border-radius: var(--radius-medium);
+    box-shadow: var(--shadow-focus);
+}
+
+/* ========= APPBAR ========= */
+/* Tab-Reiter (aktuell) */
+body:not(.dashboardDocument) header .MuiToolbar-root .MuiButton-textPrimary.MuiButton-colorPrimary {
+    background-color: var(--color-primary);
+}

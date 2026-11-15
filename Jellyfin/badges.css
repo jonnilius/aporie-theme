@@ -1,0 +1,6 @@
+/* Badges in AppBar */
+#ab-header-badges > div {
+  background: var(--color-primary) !important;
+  border: var(--border-thin) !important;
+  box-shadow: unset !important;
+}
