@@ -1,0 +1,18 @@
+/* Badges in AppBar */
+#ab-header-badges > div {
+  background: var(--color-primary) !important;
+  border: var(--border-thin) !important;
+  box-shadow: unset !important;
+}
+
+/* Friends */
+#abFriendsBtn {
+  background: var(--color-primary);
+  border-radius: var(--radius-medium);
+  box-shadow: unset;
+}
+#abFriendsBtn:hover {
+  background: var(--color-primary);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-hover);
+}

@@ -1,5 +1,6 @@
 /* Konfiguration */
 :root {  
+  --jf-palette-primary-main: var(--color-primary);
   /* Trennlinie */
   --jf-palette-divider: var(--color-primary);
 }
