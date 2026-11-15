@@ -12,8 +12,54 @@
     box-shadow: var(--shadow-focus);
 }
 
+
 /* ========= APPBAR ========= */
-/* Tab-Reiter (aktuell) */
+body:not(.dashboardDocument):not(:has(#videoOsdPage)) .MuiAppBar-root.MuiAppBar-root {
+    top: 8px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    background: var(--color-surface) !important;
+    border: var(--border-medium);
+    border-radius: var(--radius-large);
+    box-shadow: var(--shadow-panel) !important;
+}
+body:not(.dashboardDocument) .MuiAppBar-root > .MuiToolbar-root {
+    min-height: 56px;
+    height: 56px;
+    padding-inline: 10px;
+}
+
+/* Brand */
+.MuiToolbar-root .MuiButtonBase-root:has(.MuiButton-startIcon img) {
+    font-size: 0 !important;
+    min-width: 0 !important;
+}
+.MuiToolbar-root .MuiButtonBase-root:has(.MuiButton-startIcon img) .MuiButton-startIcon {
+    position: relative !important;
+    width: 5em !important;
+    height: 2em !important;
+    margin: 0 !important;
+    font-size: 16px !important;
+}
+.MuiToolbar-root .MuiButtonBase-root:has(.MuiButton-startIcon img) .MuiButton-startIcon img {
+    visibility: hidden !important;
+}
+.MuiToolbar-root .MuiButtonBase-root:has(.MuiButton-startIcon img) .MuiButton-startIcon::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: url("https://theme.aporie.me/Jellyfin/logo.png") no-repeat center center !important;
+    background-size: contain !important;
+}
+
+
+/* Tab-Reiter */
+body:not(.dashboardDocument) header .MuiToolbar-root .MuiButton-textPrimary.MuiButton-colorPrimary,
+body:not(.dashboardDocument) header .MuiToolbar-root .MuiButton-textPrimary.MuiButton-colorPrimary :is(svg, span) {
+    color: #fff !important;
+    fill: currentColor;
+}
 body:not(.dashboardDocument) header .MuiToolbar-root .MuiButton-textPrimary.MuiButton-colorPrimary {
     background-color: var(--color-primary);
 }
