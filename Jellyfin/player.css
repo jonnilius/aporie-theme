@@ -18,11 +18,23 @@
 
 /* Lautstärke */
 .mdl-slider-background-lower {
-  background-color: var(--color-primary);
+  background-color: var(--color-primary) !important;
 }
 
-/* ENDCARD ==================================
-  Countdown, Layout und Aktionen
+/* STARTCARD =================================
+  Überspringen
+  ============================================ */
+  /* Überspringen-Button */
+.skip-button {
+    background: var(--color-primary) !important;
+}
+#skipIntro .btnSkipIntro:hover {
+    background: var(--color-primary) !important;
+}
+
+
+/* NEXTCARD ==================================
+  Container, Countdown and Buttons
   =========================================== */
 .upNextContainer {
   position: fixed;
@@ -70,25 +82,19 @@
   align-content: flex-end;
   gap: 2px;
 }
-.upNextDialog-button {
+.upNextDialog-buttons .upNextDialog-button {
   color: var(--color-text);
-  background: var(--color-background);
+  background: var(--color-background) !important;
 }
 .upNextDialog-button:hover {
-  background: var(--color-primary);
+  background: var(--color-primary) !important;
   box-shadow: var(--shadow-hover);
 }
 .upNextDialog-button:focus {
-  background: var(--color-primary);
+  background: var(--color-primary) !important;
   box-shadow: var(--shadow-focus);
 }
-/* Überspringen-Button */
-.skip-button {
-    background: var(--color-primary) !important;
-}
-#skipIntro .btnSkipIntro:hover {
-    background: var(--color-primary) !important; /* Accent color on hover */
-}
+
 /* Jetzt Starten-Button */
 .btnStartNow {
     background: var(--color-primary) !important;
