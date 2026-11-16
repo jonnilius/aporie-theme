@@ -1,0 +1,1468 @@
+/* ==Manifest==
+@name           APORIE Theme
+@version        0.13.0-dev
+@author         jonnilius
+@namespace      github.com/jonnilius
+@description    Theme im Stil der APORIE-Webseite
+
+==Scope==
+@match          https://ddownload.com/*
+@requires       https://aporie.me/js/particles.min.js
+
+==Changelog==
+0.13.0
+Added:
+- Mein Konto
+
+0.12.0
+Added:
+- Modal
+- Switch Toggle
+- Checkbox checked
+Fixed:
+- Meine Dateien - Ordnerauswahl
+*/
+/* ==STYLE-TREE==
+├─ HEADER
+│   ├─ Logo
+│   ├─ Navigation
+│   ├─ Sprache
+│   ├─ Menü-Toggle
+│   └─ Mobile-Panel
+│
+├─ FOOTER
+│   ├─ Branding
+│   ├─ Label & Links
+│   └─ Copyright
+│
+├─ STARTSEITE
+├─ LOGIN
+├─ MEIN KONTO
+│   ├─ Willkommen
+│   ├─ Addon
+│   ├─ Statistik
+│   ├─ Seitenleiste
+│   └─ Content
+│       ├─ Header
+│       └─ Speichern
+│
+├─ MEINE DATEIEN
+│
+└─ HOCHLADEN
+*/
+
+
+/* Standardwerte */
+html body {
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+
+
+/* ================================= HEADER ================================= */
+header.modern-header {
+  background: var(--color-surface);
+  border-bottom: var(--border-medium);
+  box-shadow: var(--shadow-panel);
+}
+
+/* Logo */
+header.modern-header .header-logo {
+  filter: var(--filter-primary);
+}
+
+/* Navigation */
+nav.header-nav a.nav-link {
+  color: var(--color-text);
+  border: none;
+  background: var(--color-primary);
+  -webkit-text-fill-color: var(--color-text);
+  transition: var(--transition-all);
+}
+nav.header-nav a.nav-link:hover {
+  color: var(--color-text);
+  background: var(--color-primary);
+  transform: var(--transform-small);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Sprache */
+#headerLangBtn, 
+#headerLangBtnLoggedIn {
+  color: var(--color-text);
+  order: 1;
+}
+
+/* Menü-Toggle */
+header.modern-header .mobile-menu-toggle {
+  color: var(--color-primary);
+}
+
+/* Mobile-Panel */
+#mobile-menu-portal {
+  background: rgba(var(--color-background-rgb), 0.4);
+}
+div.mm-card {
+  background: var(--color-surface);
+  border: var(--border-medium);
+}
+div.mm-card .mobile-nav-link {
+  color: var(--color-text);
+}
+div.mm-card .mm-lang-globe,
+div.mm-card .mobile-collapse-trigger {
+  color: var(--color-primary);
+}
+div.mm-card div:last-of-type a {
+  /* Inline-Style */
+  background: var(--color-primary) !important;
+  border: unset !important;
+  box-shadow: unset !important;
+}
+div.mm-card div:last-of-type a:hover {
+  box-shadow: var(--shadow-hover) !important;
+  transform: var(--transform-more-small)
+}
+
+
+
+/* ================================= FOOTER ================================= */
+footer.modern-footer {
+  background: var(--color-surface);
+  border-top: var(--border-medium);
+  box-shadow: var(--shadow-panel);
+}
+
+/* Branding */
+div.footer-logo img {
+  filter: var(--filter-primary);
+}
+div.footer-logo img:hover {
+  filter: var(--filter-primary);
+}
+div.footer-badge-wrap a:hover {
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-small);
+}
+
+/* Label & Links */
+div.footer-section h4 {
+  color: var(--color-primary);
+}
+ul.footer-menu a:hover {
+  color: var(--color-primary);
+}
+
+/* Copyright */
+div.footer-bottom {
+  background: transparent;
+}
+
+
+/* =============================== STARTSEITE =============================== */
+div.splash-container,
+div.splash-container::before,
+div.splash-container::after{
+  background: none;
+}
+
+/* Title */
+div.splash-container h1,
+div.splash-container h2,
+div.splash-container h3 {
+  color: var(--color-text);
+}
+span.hero-accent {
+  background: var(--color-primary);
+  background-clip: text;
+}
+
+/* ----------------- Hero ----------------- */
+
+/* Icons */
+div.floating-icon {
+  /* Inline-Style → Important */
+  background: var(--color-primary) !important;
+  box-shadow: var(--shadow-panel) !important;
+}
+
+/* Buttons */
+div.splash-container a.hero-btn {
+  background: var(--color-primary);
+  border: var(--border-medium);
+  box-shadow: none;
+}
+div.splash-container a.hero-btn:hover {
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-small);
+}
+div.splash-container a.hero-btn-secondary {
+  color: var(--color-primary);
+  border: var(--border-medium);
+}
+div.splash-container a.hero-btn-secondary:hover {
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-small);
+  color: var(--color-text);
+  background: var(--color-primary);
+}
+
+
+/* ================================= Preise ================================= */
+section.pricing-section {
+  background: none;
+}
+
+/* Panel */
+section.pricing-section .pricing-inner {
+  background: var(--color-surface);
+  max-width: 85vw;
+  padding: 50px;
+  border: var(--border-medium);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-panel);
+}
+section.pricing-section .hero-accent {
+  background: var(--color-primary);
+  background-clip: text;
+}
+section.pricing-section .pricing-subtitle {
+  color: var(--color-text);
+}
+section.pricing-section .pricing-guarantee {
+  color: var(--color-primary);
+}
+
+/* ----------------- Gast ----------------- */
+div.pricing-card.tier-guest {
+  background: var(--color-background);
+  border: var(--border-medium);
+  opacity: 1.0;
+}
+div.pricing-card.tier-guest:hover {
+  box-shadow: var(--shadow-hover);
+}
+div.pricing-card.tier-guest .plan-name {
+  color: var(--color-primary);
+}
+div.pricing-card.tier-guest span {
+  color: var(--color-text);
+}
+
+/* ----------------- Registriert ----------------- */
+div.pricing-card.tier-registered {
+  background: var(--color-background);
+  border: var(--border-medium);
+}
+div.pricing-card.tier-registered:hover {
+  border: var(--border-medium);
+  box-shadow: var(--shadow-hover);
+}
+div.pricing-card.tier-registered .plan-name {
+  color: var(--color-primary);
+}
+div.pricing-card.tier-registered span {
+  color: var(--color-text);
+}
+
+
+/* ----------------- Ultimate ----------------- */
+div.pricing-card.featured {
+  background: var(--color-background);
+  border: var(--border-medium);
+}
+div.pricing-card.featured:hover {
+  box-shadow: var(--shadow-hover);
+}
+div.pricing-card.featured .popular-badge {
+  background: var(--color-primary);
+}
+div.pricing-card.featured span {
+  color: var(--color-text);
+}
+
+/* Preis */
+div.pricing-card.featured .price span,
+div.pricing-card.featured .price .amount,
+div.pricing-card.featured .price .amount-decimal {
+  color: var(--color-primary);
+}
+
+/* Button */
+a.plan-btn-solid {
+  background: var(--color-primary);
+  box-shadow: none;
+}
+a.plan-btn-solid:hover {
+  background: var(--color-primary);
+  transform: var(--transform-small);
+  box-shadow: var(--shadow-hover);
+}
+
+
+/* ================================== LOGIN ================================= */
+/* Hintergrund */
+div.auth-page {
+  background: transparent
+}
+div.auth-page::before,
+div.auth-page::after{
+  background: rgba(var(--color-primary-rgb),0.14)
+}
+
+/* Panel */
+div.auth-card {
+  background: var(--color-surface);
+  box-shadow: var(--shadow-panel);
+  border: var(--border-medium);
+}
+div.auth-card h2 {
+  color: var(--color-primary);
+}
+div.auth-card .subtitle {
+  color: var(--color-text);
+}
+
+/* Accounts Button */
+a.oauth-btn {
+  background: var(--color-primary);
+  border: none;
+  transition: var(--transition-transform);
+}
+a.oauth-btn:hover {
+  background: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover);
+}
+a.oauth-btn svg{
+  filter: var(--filter-white);
+}
+a.oauth-btn rect {
+  width: 8;
+  height: 8;
+}
+a.oauth-btn span {
+  color: var(--color-text);
+}
+
+/* Trennlinie - E-Mail-Adresse */
+div.auth-card .oauth-divider {
+  color: var(--color-text);
+}
+div.auth-card .oauth-divider::before, 
+div.auth-card .oauth-divider::after {
+  background: var(--color-primary)
+}
+
+/* Eingabefelder */
+div.auth-card label {
+  color: var(--color-text);
+}
+div.auth-card .form-control {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin);
+}
+div.auth-card .form-control:focus {
+  border: var(--border-medium);
+  box-shadow: var(--shadow-focus)
+}
+
+
+/* Anmelden & Registrieren */
+div.auth-card .forgot-link {
+  color: var(--color-primary);
+}
+div.auth-card .btn-primary {
+  background: var(--color-primary);
+  border: unset;
+  box-shadow: unset;
+  transition: var(--transition-all)
+}
+div.auth-card .btn-primary:hover {
+  background: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover)
+}
+div.auth-card .bottom-text {
+  color: var(--color-text);
+  border-top-color: var(--color-primary);
+}
+div.auth-card .bottom-text a {
+  color: var(--color-primary);
+}
+
+
+
+/* ================================= MEIN KONTO ================================= */
+div.ma-dashboard {
+  background: none;
+}
+
+/* Willkommen */
+div.ma-hero {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-panel);
+}
+div.ma-hero::before, 
+div.ma-hero::after {
+  background: none;
+}
+div.ma-hero-left {
+  background: var(--color-background);
+  border-radius: var(--radius-large);
+  padding: 0.95rem
+}
+div.ma-hero-left .ma-hero-eyebrow {
+  padding: unset;
+  color: var(--color-text);
+  background: transparent;
+  border: unset;
+}
+div.ma-hero-left .ma-hero-title {
+  color: var(--color-primary);
+  box-shadow: unset;
+}
+div.ma-hero-right .ma-hero-status-value {
+  color: var(--color-primary);
+}
+div.ma-hero-right .ma-hero-cta {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: unset;
+  box-shadow: unset;
+  transition: var(--transition-all);
+}
+div.ma-hero-right .ma-hero-cta:hover {
+  background: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover);
+}
+
+/* Addon */
+div.ma-addon-card {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-large);
+}
+div.ma-addon-shimmer {
+  display: none;
+}
+div.ma-addon-title {
+  color: var(--color-primary);
+  background: transparent;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+}
+a.ma-addon-btn {
+  box-shadow: var(--shadow-panel);
+}
+a.ma-addon-btn:hover {
+  transform: var(--transform-hover);
+}
+a.ma-addon-apps {
+  color: var(--color-primary);
+}
+a.ma-addon-apps:hover {
+  color: var(--color-primary);
+}
+
+/* Statistiken */
+div.ma-stats-grid .ma-stat-card {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-large);
+}
+div.ma-stats-grid .ma-stat-value {
+  color: var(--color-primary);
+}
+div.ma-stats-grid .ma-ultimate-pill {
+  color: var(--color-primary);
+  background: var(--color-background);
+  border-radius: var(--radius-large);
+  box-shadow: unset;
+}
+div.ma-stats-grid .ma-stat-bar-fill {
+  background: var(--color-primary);
+}
+div.ma-stats-grid .ma-traffic-buy {
+  background: var(--color-primary);
+  box-shadow: unset;
+  transition: var(--transition-all);
+}
+div.ma-stats-grid .ma-traffic-buy:hover {
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover);
+}
+
+/* Seitenleiste*/
+aside.ma-sidebar {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-large);
+  
+}
+ul.ma-sidebar-nav .nav-link,
+ul.ma-sidebar-nav .external {
+  color: var(--color-text);
+}
+ul.ma-sidebar-nav .nav-link:hover,
+ul.ma-sidebar-nav .external:hover {
+  color: var(--color-primary);
+  background: unset;
+  box-shadow: unset;
+}
+ul.ma-sidebar-nav .nav-link.active {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: unset;
+  box-shadow: unset;
+}
+div.ma-sidebar-divider {
+  background: var(--color-primary);
+}
+ul.ma-sidebar-nav .ma-logout-link {
+  color: var(--color-text);
+  background: var(--color-primary);
+  transition: var(--transition-all);
+}
+ul.ma-sidebar-nav .ma-logout-link:hover {
+  color: var(--color-text);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover);
+}
+ul.ma-sidebar-nav .ma-logout-link i {
+  color: inherit;
+}
+ul.ma-sidebar-nav .ma-logout-link:hover i {
+  color: inherit;
+}
+
+/* ------------------- Content ------------------- */
+div.ma-section {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-large);
+}
+
+/* Header */
+div.ma-section-header {
+  border-color: var(--color-primary);
+}
+div.ma-section-header .ma-section-icon {
+  color: var(--color-primary);
+  background: var(--color-background);
+}
+div.ma-section-header .ma-section-title {
+  color: var(--color-text);
+}
+div.ma-section-header .ma-section-subtitle {
+  color: var(--color-primary);
+}
+
+/* Label */
+div.ma-form-label {
+  color: var(--color-primary);
+}
+div.ma-subsection-title {
+  color: var(--color-text);
+}
+div.ma-subsection-title i {
+  color: var(--color-primary);
+}
+
+/* Beschreibung */
+p.ma-subsection-desc {
+  color: var(--color-primary);
+}
+
+/* Form */
+div.ma-form-row {
+  border-color: var(--color-primary);
+}
+div.ma-section .ma-subsection {
+  border-color: var(--color-primary);
+}
+
+/* Eingabefelder */
+div.ma-form-row input[readonly] {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: unset;
+}
+div.ma-form-row input[type=password],
+div.ma-form-row input[type=email]{
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin);
+}
+div.ma-form-row input[type=email]:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Sprache */
+div.ma-lang-select button {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin);
+}
+div.ma-lang-select button:hover {
+  border: var(--border-thin);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Speichern */
+div.ma-save-row button {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: unset;
+  box-shadow: unset;
+}
+div.ma-save-row button:hover {
+  background: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover);
+}
+
+/* Toggle */
+label.ma-toggle input[type="checkbox"]:checked + .ma-toggle-slider {
+  background: var(--color-primary);
+}
+span.ma-toggle-text {
+  color: var(--color-text);
+}
+
+
+
+/* ================================= HOCHLADEN ================================= */
+body.index-page {
+  background: var(--color-background);
+}
+
+/* ---------------------------------- Hero ---------------------------------- */
+section.upload-hero {
+  background: none;
+  margin: 3rem auto;
+  box-shadow: none;
+  padding: 0 2rem;
+}
+section.upload-hero div.upload-hero-content {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-panel);
+  max-width: 1400px;
+  padding: 4rem 1rem
+  
+}
+
+/* Buttons */
+div.upload-hero-content a.btn-white {
+  color: var(--color-primary) !important; /* Important vorhanden */
+  border: var(--border-thin) !important; /* Important vorhanden */
+}
+div.upload-hero-content a.btn-white:hover {
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-small);
+  border: var(--border-thin) !important; /* Important vorhanden */
+  background: var(--color-primary) !important; /* Important vorhanden */
+}
+div.upload-hero-content label.btn-secondary {
+  color: var(--color-text) !important;
+  background: var(--color-primary) !important;
+  border: var(--border-thin) !important; /* Important vorhanden */
+}
+div.upload-hero-content label.btn-secondary:hover {
+  transform: var(--transform-small);
+  box-shadow: var(--shadow-hover);
+  color: var(--color-text) !important;
+  background: var(--color-primary) !important;
+  border: var(--border-thin) !important; /* Important vorhanden */
+}
+
+/* ---------------------------------- Panel --------------------------------- */
+section.upload-main {
+  background: none;
+  padding: 0 2rem;
+  margin: 3rem auto;
+}
+section.upload-main .upload-card {
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: var(--border-medium);
+  box-shadow: var(--shadow-panel);
+}
+section.upload-main .upload-fields {
+  color: var(--color-text);
+  background: var(--color-surface);
+  padding: 0 2rem
+}
+div.ur-section, 
+div.ur-section::before, 
+div.ur-section::after {
+  background: none;
+}
+
+/* Tab-Reiter */
+ul.modern-tabs {
+  color: var(--color-text);
+  background: var(--color-background);
+  border-color: var(--color-primary);
+}
+ul.modern-tabs li {
+  color: inherit;
+}
+ul.modern-tabs li:hover {
+  color: var(--color-primary);
+  background: var(--color-background);
+}
+ul.modern-tabs li.current {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: none;
+}
+
+
+/* ------------------------------ DATEI HOCHLADEN --------------------------- */
+
+/* Hinweis der Maximalgröße */
+#uploadfile div:first-of-type {
+  color: var(--color-primary) !important; /* Inline-Style */
+}
+#uploadfile:has(#files_list) .progress_div {
+  margin: 0;
+}
+
+/* Drop-Bereich */
+#dropzone {
+  background: var(--color-background);
+  border: var(--border-dashed) !important; /* Inline-Style */
+}
+#dropzone.dragover {
+  border: var(--border-medium) !important; /* Inline-Style */
+}
+#dropzone i {
+  background: var(--color-primary);
+  -webkit-background-clip: text;
+}
+#dropzone label {
+  color: var(--color-primary)
+}
+
+/* Datei-Liste */
+#files_list .xrow {
+  /* Important vorhanden */
+  background: var(--color-background) !important;
+  border: var(--border-thin) !important;
+}
+#files_list .file-icon {
+  color: var(--color-primary) !important;
+}
+#files_list .xfname {
+  color: var(--color-text) !important;
+}
+#files_list .xdescr label {
+  color: var(--color-text);
+  margin: 0;
+}
+#files_list .del_btn {
+  color: var(--color-primary) !important;
+}
+#files_list .del_btn:hover {
+  background: transparent !important;
+}
+#files_list .del_btn:hover::before {
+  box-shadow: var(--shadow-hover);
+}
+
+/* "Add More Files" Button */
+#upload_controls label {
+  transition: var(--transition-all);
+}
+#upload_controls label:hover {
+  transform: var(--transform-small);
+}
+#upload_controls label span {
+  /* Inline-Styles */
+  background: inherit !important;
+  color: var(--color-primary) !important;
+  border: var(--border-thin) !important;
+  
+}
+#upload_controls label:hover span {
+  color: var(--color-text) !important;
+  background: var(--color-primary) !important;
+  box-shadow: var(--shadow-hover);
+}
+
+/* "Start Upload" Button */
+#upload_controls button {
+  /* Inline-Styles */
+  background: var(--color-primary) !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: var(--transition-all) !important;
+}
+#upload_controls button:hover {
+  box-shadow: var(--shadow-hover) !important; /* Inline-Style */
+  transform: var(--transform-small);
+}
+
+
+/* Fortschritt-Anzeige */
+.progress_div div.progressbar-outer {
+  background: var(--color-background) !important;
+}
+.progress_div div.progressbar-inner {
+  background: var(--color-primary) !important;
+}
+.progress_div div.progressbar-filenames {
+  color: var(--color-text) !important; /* Important vorhanden */
+}
+.progress_div div.progressbar-completed b {
+  color: var(--color-primary) !important; /* Important vorhanden */
+}
+.progress_div div.progressbar-speed b{
+  color: var(--color-primary) !important; /* Important gesetzt */
+}
+.progress_div a.abort {
+  background: var(--color-primary) !important; /* Important gesetzt */
+}
+.progress_div a.abort:hover {
+  background: var(--color-primary) !important; /* Important gesetzt */
+  transform: var(--transform-small) !important; /* Important gesetzt */
+}
+
+/* Optionen */
+.upload-fields .form-group label {
+  color: var(--color-text);
+}
+.upload-fields .form-group input,
+.upload-fields .form-group select {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin)
+}
+.upload-fields .form-group input:focus,
+.upload-fields .form-group select:focus {
+  box-shadow: var(--shadow-focus);
+}
+
+/* Hochladen Abgeschlossen */
+div.ur-header .ur-header-icon {
+  color: var(--color-text);
+  background: var(--color-primary);
+}
+div.ur-header h2 {
+  color: var(--color-text);
+}
+
+/* Fertige Datei-Liste */
+li.ur-file-item {
+  background: var(--color-surface);
+  border: var(--border-medium)
+}
+li.ur-file-item:hover {
+  border: var(--border-medium);
+  box-shadow: var(--shadow-hover);
+}
+li.ur-file-item .ur-file-check {
+  color: var(--color-text);
+  background: var(--color-primary);
+}
+li.ur-file-item h4 {
+  color: var(--color-text);
+}
+li.ur-file-item .ur-btn {
+  color: var(--color-text);
+  background: var(--color-primary);
+  box-shadow: none;
+  border: none;
+}
+li.ur-file-item .ur-btn:hover {
+  transform: var(--transform-small);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Datei-Links */
+div.ur-links-card {
+  background: var(--color-surface);
+  border: var(--border-medium);
+}
+div.ur-links-card h3 {
+  color: var(--color-text);
+}
+
+/* Datei-Link */
+div.ur-link-row {
+  background: var(--color-surface);
+  border: none;
+  padding-left: 0
+}
+div.ur-link-row .ur-link-type {
+  color: var(--color-text);
+}
+div.ur-link-row .ur-single-link {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin);
+}
+div.ur-link-row .ur-copy-all-btn {
+  background: var(--color-primary);
+  border: none;
+  box-shadow: none;
+}
+div.ur-link-row .ur-copy-all-btn:hover {
+  transform: var(--transform-small);
+  box-shadow: var(--shadow-hover);
+}
+
+
+/* ------------------------------- URL HOCHLADEN ---------------------------- */
+
+/* Hinweise */
+#uploadurl .url-info {
+  color: var(--color-text);
+  background: var(--color-background);
+  border-left: var(--border-medium);
+}
+#uploadurl .url-info b {
+  color: var(--color-primary);
+}
+
+/* Eingabefelder */
+#uploadurl label {
+  color: var(--color-text);
+}
+#uploadurl .form-control {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin);
+}
+#uploadurl .form-control:focus {
+  box-shadow: var(--shadow-focus);
+}
+
+/* Nutzungsbedingungen */
+#uploadurl .tos-agree {
+  background: var(--color-background);
+  border: none;
+  border-left: var(--border-medium);
+}
+#uploadurl .tos-agree label a {
+  color: var(--color-primary);
+}
+#uploadurl .tos-agree input {
+  accent-color: var(--color-primary);
+}
+
+/* Hochladen Button */
+#uploadurl .btn.uploadbtn {
+  background: var(--color-primary);
+  border: none;
+  box-shadow: none;
+}
+#uploadurl .btn.uploadbtn:hover {
+  background: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-small);
+}
+
+
+/* --------------------------------- KOPIEREN ------------------------------- */
+#copyForm .url-info {
+  color: var(--color-text);
+  background: var(--color-background);
+  border-left: var(--border-medium);
+}
+#copyForm .url-info b {
+  color: var(--color-primary);
+}
+
+/* Eingabefelder */
+#copyForm .form-control {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin);
+}
+#copyForm .form-control:focus {
+  box-shadow: var(--shadow-focus);
+}
+
+/* Nutzungsbedingungen */
+#copyForm .tos-agree {
+  background: var(--color-background);
+  border: none;
+  border-left: var(--border-medium);
+}
+#copyForm .tos-agree label a {
+  color: var(--color-primary);
+}
+#copyForm .tos-agree input {
+  accent-color: var(--color-primary);
+}
+
+/* Buttons */
+#copyForm .btn {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: none;
+  box-shadow: none;
+}
+#copyForm .btn:hover {
+  color: var(--color-text);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-small);
+}
+#copyForm .btn.uploadbtn {
+  background: var(--color-primary);
+  border: none;
+  box-shadow: none;
+}
+#copyForm .btn.uploadbtn:hover {
+  color: var(--color-text);
+  background: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-small);
+}
+
+
+/* -------------------------------- FTP-UPLOAD ------------------------------ */
+#ftp_upload > div {
+  border: var(--border-medium);
+  border-radius: var(--radius-medium);
+  background: var(--color-primary);
+}
+
+/* Tabelle */
+table.ftp-info-table {
+  background: var(--color-background);
+  border-radius: var(--radius-medium);
+}
+table.ftp-info-table tr {
+  border: none;
+}
+table.ftp-info-table td:first-child {
+  color: var(--color-primary);
+}
+table.ftp-info-table td:not(td:first-child) {
+  color: var(--color-text);
+}
+table.ftp-info-table .hdr td {
+  color: var(--color-text);
+  background: var(--color-primary);
+}
+
+
+
+/* ============================= MEINE DATEIEN ============================== */
+div.mf-dashboard {
+  background: none;
+}
+
+/* Header */
+div.mf-header {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-panel);
+  padding: 1rem;
+}
+div.mf-header .accent {
+  background: var(--color-primary);
+  background-clip: text;
+}
+div.mf-header .mf-breadcrumb {
+  color: #94a3b8;
+}
+div.mf-header .mf-breadcrumb a {
+  color: inherit;
+}
+div.mf-header .mf-breadcrumb .fa-home {
+  color: inherit;
+}
+div.mf-header .mf-breadcrumb .fa-chevron-right {
+  color: inherit;
+}
+div.mf-header .mf-breadcrumb span {
+  color: var(--color-primary)
+}
+div.mf-header .mf-header-btn {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: none;
+}
+div.mf-header .mf-header-btn:hover {
+  transform: var(--transform-small);
+  box-shadow: var(--shadow-hover);
+  background: var(--color-primary);
+}
+
+/* Statistiken */
+#mfStatsGrid .mf-stat-card {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  box-shadow: var(--shadow-panel);
+}
+#mfStatsGrid .mf-stat-card .value {
+  color: var(--color-primary)
+}
+#mfStatsGrid .mf-stat-card .value.accent {
+  background: transparent;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+
+/* ------------------------------ SIDEBAR-ORDNER ---------------------------- */
+aside.mf-sidebar {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  box-shadow: var(--shadow-panel);
+}
+
+/* Neuer Ordnername */
+aside.mf-sidebar input {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin);
+  outline: var(--border-thin-transparent);
+}
+aside.mf-sidebar input:focus {
+  border: var(--border-thin);
+  outline: var(--border-thin);
+  box-shadow: var(--shadow-focus);
+}
+
+/* Ordner erstellen */
+aside.mf-sidebar button {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: unset;
+  box-shadow: unset;
+}
+aside.mf-sidebar button:hover {
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover);
+}
+
+/* Ordnerliste */
+#folders_list .mf-folder-item:hover {
+  background: var(--color-primary);
+}
+#folders_list .mf-folder-item i {
+  color: var(--color-primary);
+}
+#folders_list .mf-folder-item:hover i {
+  color: var(--color-text);
+}
+#folders_list .mf-folder-name {
+  color: var(--color-text);
+}
+#folders_list .mf-folder-action-edit,
+#folders_list .mf-folder-action-delete {
+  color: var(--color-background);
+  background: unset;
+}
+
+/* ------------------------------ DATEIEN-TOOLBAR --------------------------- */
+div.mf-content {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  box-shadow: var(--shadow-panel);
+}
+div.mf-content .mf-filters-card {
+  background: unset;
+  border: unset;
+}
+div.mf-content .mf-filters-bar {
+  border-bottom: var(--border-medium);
+}
+div.mf-content .mf-table-wrap {
+  border: var(--border-medium);
+  border-radius: var(--radius-medium);
+}
+
+/* Suchen */
+div.mf-search-row input[type="text"] {
+  color: inherit;
+  background: var(--color-background);
+  border: var(--border-thin);
+  transition: var(--transition-all);
+  outline: thin solid var(--color-surface);
+}
+div.mf-search-row input[type="text"]:focus {
+  border-color: var(--color-primary);
+  outline: thin solid var(--color-primary);
+  box-shadow: var(--shadow-focus);
+}
+div.mf-search-row button {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: unset;
+  box-shadow: unset;
+  transition: var(--transition-transform);
+}
+div.mf-search-row button:hover {
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover);
+}
+
+/* Label */
+span.mf-filter-label {}
+
+/* Ordnerauswahl */
+#mfFldPicker {
+  background: var(--color-background);
+  border-radius: var(--radius-medium);
+}
+#mfFldPicker .fas {
+  color: var(--color-primary) !important; /* Inline-Style */
+}
+#mfFldPicker .mf-fld-picker-trigger {
+  color: var(--color-text);
+  background: inherit;
+  border: var(--border-thin);
+}
+#mfFldPicker .mf-fld-picker-trigger:hover {
+  border: var(--border-thin);
+  box-shadow: var(--shadow-hover);
+}
+#mfFldPicker .mf-fld-picker-trigger:focus {
+  outline: unset;
+  box-shadow: var(--shadow-focus)
+}
+
+/* Ordnerauswahl Panel */
+#mfFldPicker .mf-fld-picker-panel {
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: var(--border-medium);
+}
+#mfFldPicker .mf-fld-picker-search {
+  background: inherit;
+  border: unset;
+}
+#mfFldPicker .mf-fld-picker-input {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin);
+  outline: var(--border-thin-transparent);
+  box-shadow: unset;
+}
+#mfFldPicker .mf-fld-picker-input:focus {
+  outline: var(--border-thin);
+  box-shadow: var(--shadow-focus);
+}
+#mfFldPicker .mf-fld-picker-item {
+  color: var(--color-text);
+}
+#mfFldPicker .mf-fld-picker-item:hover{
+  background: var(--color-primary);
+}
+#mfFldPicker .mf-fld-picker-item:hover .fa-folder {
+  color: var(--color-text) !important;
+}
+#mfFldPicker .mf-fld-picker-item.selected {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: var(--border-thin);
+}
+#mfFldPicker .mf-fld-picker-item.selected:hover{
+  color: var(--color-text);
+  background: var(--color-primary);
+}
+#mfFldPicker .mf-fld-picker-item.selected .fa-folder {
+  color: var(--color-text) !important;
+}
+
+/* Button */
+button.mf-action-btn, 
+button.mf-action-btn.primary,
+button.mf-action-btn.danger {
+  color: var(--color-text);
+  background: var(--color-primary);
+  border: unset;
+}
+button.mf-action-btn:hover, 
+button.mf-action-btn.primary:hover,
+button.mf-action-btn.danger:hover {
+  color: unset;
+  background: var(--color-primary);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover);
+}
+
+
+/* Dateien pro Seite */
+div.mf-perpage {
+  background: var(--color-background);
+  border: var(--border-thin);
+}
+div.mf-perpage label {
+  color: var(--color-text);
+}
+div.mf-perpage label input[type="radio"]:checked + span {
+  color: revert;
+  background: var(--color-primary);
+}
+div.mf-perpage label:hover input[type="radio"]:not(:checked) + span {
+  color: revert;
+}
+
+
+/* ------------------------------- DATEIEN-LISTE ---------------------------- */
+table.mf-table {
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+/* Header */
+table.mf-table thead tr {
+  color: var(--color-text);
+  background: var(--color-primary);
+}
+table.mf-table thead th {
+  color: inherit;
+  border: unset;
+}
+table.mf-table thead span {
+  color: inherit !important;
+}
+table.mf-table thead input ~ span {
+  border: var(--border-thin);
+  background: var(--color-background);
+}
+
+/* Tabelle */
+table.mf-table .mf-empty i {
+  color: var(--color-primary);
+}
+table.mf-table tbody tr td {
+  background: var(--color-surface);
+}
+table.mf-table tbody tr:hover td {
+  background: var(--color-surface);
+}
+
+/* Checkbox */
+tr.filerow .mf-checkbox span {
+  background: var(--color-background);
+  border: var(--border-thin)
+}
+tr.filerow .mf-checkbox:hover span {
+  border: var(--border-thin);
+  box-shadow: var(--shadow-hover);
+}
+/* Icon */
+tr.filerow .mf-icon-disc,
+tr.filerow .mf-icon-video{
+  color: var(--color-primary);
+}
+/* Dateiname */
+tr.filerow .mf-td-name a {
+  color: var(--color-text);
+}
+tr.filerow .mf-td-name a:hover {
+  color: var(--color-primary);
+}
+/* Dateigröße & Datum */
+tr.filerow .mf-td-date,
+tr.filerow .mf-td-size{
+  color: var(--color-primary);
+}
+/* Toggle */
+tr.filerow .mf-switch-slider {
+  background: var(--color-background);
+}
+tr.filerow .mf-switch-slider::before {
+  background: var(--color-text);
+}
+
+/* Switch-Toggle */
+label.mf-switch input + .mf-switch-slider {
+  background: var(--color-background);
+}
+label.mf-switch input:checked + .mf-switch-slider {
+  background: var(--color-primary);
+}
+
+/* Checkbox */
+label.mf-checkbox input:checked ~ span {
+  background: var(--color-primary);
+  border: var(--border-thin);
+}
+
+
+
+/* ================================== MODAL ================================= */
+div.mf-modal {
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-large);
+}
+div.mf-modal-header {
+  background: var(--color-primary);
+}
+div.mf-modal-footer {
+  background: transparent;
+  border: none;
+}
+
+/* Buttons */
+button.mf-modal-close {
+  color: var(--color-text);
+  background: transparent;
+  border: var(--border-thin);
+  border-radius: var(--radius-medium)
+}
+
+button.mf-modal-btn {
+  color: var(--color-primary);
+  background: transparent;
+  border: var(--border-medium);
+  box-shadow: none;
+  transition: var(--transition-all);
+}
+button.mf-modal-btn:hover {
+  color: var(--color-primary);
+  border: var(--border-medium);
+  box-shadow: var(--shadow-hover);
+  transform: var(--transform-hover);
+}
+button.mf-modal-btn.primary {
+  color: var(--color-text);
+  background: var(--color-primary);
+  box-shadow: none;
+}
+button.mf-modal-btn.primary:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Eingabefeld */
+div.mf-modal-field label {
+  color: var(--color-primary);
+}
+div.mf-modal-field input[type="text"], 
+div.mf-modal-field textarea {
+  color: var(--color-text);
+  background: var(--color-background);
+  border: var(--border-thin);
+}
+
+/* Toggle */
+div.mf-modal-toggle {
+  border: none;
+}
+div.mf-modal-toggle .label-text {
+  color: var(--color-primary)
+}
+div.mf-modal-toggle .label-hint {
+  color: var(--color-text);
+}
