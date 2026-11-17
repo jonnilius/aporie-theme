@@ -1,3 +1,5 @@
+@import url("https://theme.aporie.me/aporie-theme.css");
+
 /* Konfiguration */
 :root {  
   --jf-palette-primary-main: var(--color-primary);
@@ -11,6 +13,9 @@
     border: var(--border-medium);
     border-radius: var(--radius-medium);
     box-shadow: var(--shadow-focus);
+}
+.MuiListItemIcon-root {
+    color: var(--color-primary);
 }
 
 
@@ -31,7 +36,7 @@ body:not(.dashboardDocument) .MuiAppBar-root > .MuiToolbar-root {
     padding-inline: 10px;
 }
 
-/* Brand */
+/* Branding */
 .MuiToolbar-root .MuiButtonBase-root:has(.MuiButton-startIcon img) {
     font-size: 0 !important;
     min-width: 0 !important;
