@@ -90,9 +90,10 @@ div.ma-dashboard.st {
 /* Navigation */
 .st-up nav.fm-nav a {
   color: var(--color-text) !important; /* Important vorhanden */
+
   
   /* Aktive Seite */
-  &.on {
+  &:hover, &.on {
     background: var(--color-primary);
     border: unset;
     box-shadow: unset;
@@ -466,50 +467,8 @@ div.ma-content .ma-section {
 /* ==========================================================================
    Hochladen
    ========================================================================== */
-body.index-page {
-  background: var(--color-background);
-}
 
-/* ---------------------------------- Hero ---------------------------------- */
-section.upload-hero {
-  background: none;
-  margin: 3rem auto;
-  box-shadow: none;
-  padding: 0 2rem;
-}
-section.upload-hero div.upload-hero-content {
-  background: var(--color-surface);
-  border: var(--border-medium);
-  border-radius: var(--radius-large);
-  box-shadow: var(--shadow-panel);
-  max-width: 1400px;
-  padding: 4rem 1rem
-  
-}
 
-/* Buttons */
-div.upload-hero-content a.btn-white {
-  color: var(--color-primary) !important; /* Important vorhanden */
-  border: var(--border-thin) !important; /* Important vorhanden */
-}
-div.upload-hero-content a.btn-white:hover {
-  box-shadow: var(--shadow-hover);
-  transform: var(--transform-small);
-  border: var(--border-thin) !important; /* Important vorhanden */
-  background: var(--color-primary) !important; /* Important vorhanden */
-}
-div.upload-hero-content label.btn-secondary {
-  color: var(--color-text) !important;
-  background: var(--color-primary) !important;
-  border: var(--border-thin) !important; /* Important vorhanden */
-}
-div.upload-hero-content label.btn-secondary:hover {
-  transform: var(--transform-small);
-  box-shadow: var(--shadow-hover);
-  color: var(--color-text) !important;
-  background: var(--color-primary) !important;
-  border: var(--border-thin) !important; /* Important vorhanden */
-}
 
 /* ---------------------------------- Panel --------------------------------- */
 section.upload-main {
@@ -551,6 +510,7 @@ ul.modern-tabs li.current {
   color: var(--color-text);
   background: var(--color-primary);
   border-color: var(--color-primary);
+  box-shadow: unset;
   transform: none;
 }
 
@@ -558,7 +518,7 @@ ul.modern-tabs li.current {
 /* ------------------------------ DATEI HOCHLADEN --------------------------- */
 
 /* Hinweis der Maximalgröße */
-#uploadfile div:first-of-type {
+.up-limit strong {
   color: var(--color-primary) !important; /* Inline-Style */
 }
 #uploadfile:has(#files_list) .progress_div {
@@ -642,14 +602,23 @@ ul.modern-tabs li.current {
 
 
 /* Fortschritt-Anzeige */
+.progress_div {
+  max-width: unset !important;
+  position: relative;
+  display: grid;
+  grid-template-rows: 25px 25px 36px;
+  grid-template-columns: 150px 1fr
+}
 .progress_div div.progressbar-outer {
   background: var(--color-background) !important;
+  grid-column: 1 / -1;
 }
 .progress_div div.progressbar-inner {
   background: var(--color-primary) !important;
 }
 .progress_div div.progressbar-filenames {
   color: var(--color-text) !important; /* Important vorhanden */
+  grid-column: 1 / -1;
 }
 .progress_div div.progressbar-completed b {
   color: var(--color-primary) !important; /* Important vorhanden */
@@ -658,7 +627,11 @@ ul.modern-tabs li.current {
   color: var(--color-primary) !important; /* Important gesetzt */
 }
 .progress_div a.abort {
+  padding-bottom: 3px ;
+  color: var(--color-text) !important;
   background: var(--color-primary) !important; /* Important gesetzt */
+  border: unset !important;
+  width: fit-content;
 }
 .progress_div a.abort:hover {
   background: var(--color-primary) !important; /* Important gesetzt */
