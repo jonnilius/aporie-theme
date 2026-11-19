@@ -1,4 +1,4 @@
-@import url("https://theme.aporie.me/root.css");
+@import url("https://theme.aporie.me/css/root.css");
 
 /* Konfiguration */
 :root {  
@@ -55,7 +55,7 @@ body:not(.dashboardDocument) .MuiAppBar-root > .MuiToolbar-root {
     content: "" !important;
     position: absolute !important;
     inset: 0 !important;
-    background: url("https://theme.aporie.me/Jellyfin/logo.png") no-repeat center center !important;
+    background: url("https://theme.aporie.me/css/Jellyfin/logo.png") no-repeat center center !important;
     background-size: contain !important;
 }
 
