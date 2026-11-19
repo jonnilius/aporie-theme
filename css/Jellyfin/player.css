@@ -8,13 +8,13 @@
 }
 
 /* Buttons */
-@media(hover:hover)and (pointer:fine) {
-  .paper-icon-button-light:hover:not(:disabled) {
-    color: var(--color-primary);
-    background-color: transparent;
-    transform: var(--transform-hover);
-  }
+.paper-icon-button-light:focus:not(:disabled),
+.paper-icon-button-light:hover:not(:disabled) {
+  color: var(--color-primary);
+  background-color: transparent;
+  transform: var(--transform-hover);
 }
+
 
 /* Lautstärke */
 .mdl-slider-background-lower {
