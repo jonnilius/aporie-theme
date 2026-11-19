@@ -1,0 +1,124 @@
+/* ==Manifest==
+@name           Portainer - APORIE Theme
+@version        0.5.0
+@author         jonnilius
+@namespace      github.com/jonnilius
+@description    Die Benutzeroberfläche vom Portainer im APORIE-Stil
+
+==Scope==
+@requires       particles.js
+*/
+
+
+/* =====================================================================
+   Allgemein
+   ================================================================== */
+/* Hintergrund */
+body {
+  background: var(--color-primary) !important;
+}
+
+/* Button */
+.btn.btn-primary:is([theme="dark"] *){
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-small)
+}
+.btn.btn-primary:is([theme="dark"] *):hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-background);
+  transform: scale(1.03);
+}
+.btn:focus, .btn.btn-primary:focus:is([theme="dark"] *) {
+  color: var(--color-white);
+  box-shadow: var(--shadow-primary);
+}
+
+/* Eingabefeld */
+.form-control {
+  background: var(--color-background);
+}
+.form-control:focus {
+  box-shadow: var(--shadow-primary);
+  border: var(--border-thin)
+}
+
+
+.control-label ~ div input {
+  background: var(--color-background);
+}
+
+/* =====================================================================
+   Sidebar 
+   ================================================================== */
+nav[aria-label="Main"] {
+  background: var(--color-surface);
+  border-right: var(--border-medium);
+}
+
+/* Toggle Button */
+button[aria-label="Toggle Sidebar"] {
+  background: var(--color-primary);
+}
+button[aria-label="Toggle Sidebar"]:hover {
+  background: var(--color-primary);
+  box-shadow: var(--shadow-primary);
+}
+
+/* Aktuelle Auswahl */
+a.bg-graphite-500 {
+  background: var(--color-primary)
+}
+a.bg-graphite-500:hover {
+  box-shadow: var(--shadow-primary);
+}
+
+/* Hover */
+li:hover .hover\:bg-graphite-500 {
+  background: var(--color-primary)
+}
+button[data-cy="expand-button"]:hover div {
+  background: inherit !important;
+}
+li[aria-label="Get Help"]:hover > a {
+  background: var(--color-primary) !important;
+}
+
+/* =====================================================================
+   Login
+   ================================================================== */
+#view, .change-confirmation-scroll-container, .change-confirmation-border, #content-wrapper, .page-content {
+  background: transparent;
+}
+
+/* Panel */
+.panel {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-medium);
+}
+.panel-body {
+  /* !important auch im Portainer Style */
+  background-color: inherit !important;
+}
+
+/* Eingabefelder */
+#username, #password {
+  background: var(--color-background);
+  border: var(--border-thin);
+}
+button[data-cy="auth-passwordInputToggle"] {
+  color: var(--color-white);
+}
+
+/* =====================================================================
+   PANEL
+   ================================================================== */
+#view .widget {
+  background: var(--color-surface);
+  border: var(--border-medium);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-panel);
+}

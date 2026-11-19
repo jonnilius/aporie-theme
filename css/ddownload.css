@@ -1,3 +1,14 @@
+/* ==Manifest==
+@name           DDownload - APORIE Theme
+@version        0.1.0
+@author         jonnilius
+@namespace      github.com/jonnilius
+@description    DDownload Oberfläche im APORIE-Stil
+
+==Scope==
+@requires       particles.js
+*/
+
 :root {
   /* Farben */
   --color-primary: #c0393b;
